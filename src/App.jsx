@@ -6,7 +6,21 @@ import { ArrowUpRight } from 'lucide-react';
 
 function App() {
     return (
-        <div className="bg-black min-h-screen text-gray-100 selection:bg-white/20 selection:text-white pb-20 font-sans">
+        <div className="bg-black min-h-screen text-gray-100 selection:bg-white/20 selection:text-white pb-20 font-sans relative">
+
+            {/* Availability Badge */}
+            <div className="absolute top-6 right-6 md:top-12 md:right-12 z-20">
+                <Reveal delay={1.2}>
+                    <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors cursor-default">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                        </span>
+                        <span className="text-xs font-medium text-green-400 tracking-wide uppercase">Available: June - Dec 2026</span>
+                    </div>
+                </Reveal>
+            </div>
+
             <div className="max-w-screen-xl mx-auto px-6 md:px-12 pt-24 md:pt-40">
 
                 {/* Hero Section */}
@@ -23,9 +37,19 @@ function App() {
                     <div className="md:flex md:justify-between md:items-end w-full">
                         <div className="max-w-xl mb-8 md:mb-0">
                             <Reveal delay={0.4}>
-                                <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed">
+                                <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed mb-8">
                                     {config.hero.subtext}
                                 </p>
+                                <Magnetic>
+                                    <a
+                                        href="/resume.pdf"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-medium text-sm hover:bg-gray-200 transition-colors"
+                                    >
+                                        View Resume
+                                    </a>
+                                </Magnetic>
                             </Reveal>
                         </div>
 
@@ -69,9 +93,17 @@ function App() {
                 </section>
 
                 {/* Footer */}
-                <footer className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+                <footer className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-start md:items-center text-gray-500 text-sm gap-8">
                     <Reveal delay={0.5}>
-                        <p>{config.footer}</p>
+                        <div className="flex flex-col gap-2">
+                            <p>{config.footer}</p>
+                            <a
+                                href="mailto:satyamswarnakar@example.com"
+                                className="text-gray-300 hover:text-white transition-colors font-medium"
+                            >
+                                satyamswarnakar@example.com
+                            </a>
+                        </div>
                     </Reveal>
                     <Reveal delay={0.6}>
                         <p className="mt-2 md:mt-0">© {new Date().getFullYear()} Satyam Swarnakar.</p>
