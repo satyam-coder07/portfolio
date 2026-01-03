@@ -32,5 +32,25 @@ export const config = {
             link: "#"
         }
     ],
+    deepDives: [
+        {
+            title: "Bitcoin: A Peer-to-Peer Electronic Cash System",
+            tag: "Cryptography / Distributed Systems",
+            status: "Analyzed Implementation",
+            type: "Paper"
+        },
+        {
+            title: "Language Models are Unsupervised Multitask Learners (GPT-2)",
+            tag: "NLP / Transformers",
+            status: "Deconstructing Architecture",
+            type: "Paper"
+        },
+        {
+            title: "Designing Data-Intensive Applications",
+            tag: "System Design",
+            status: "Current Read",
+            type: "Book"
+        }
+    ],
     footer: "Based in Delhi. Available for June '26."
 };

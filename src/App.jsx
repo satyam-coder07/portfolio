@@ -98,6 +98,41 @@ function App() {
                     ))}
                 </section>
 
+                {/* Deep Dives Section */}
+                <section className="mb-32">
+                    <Reveal>
+                        <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 flex items-center gap-4">
+                            <span className="w-8 h-[1px] bg-white/20"></span>
+                            Research & Engineering
+                        </h2>
+                    </Reveal>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {config.deepDives.map((item, index) => (
+                            <Reveal key={index} delay={0.2 + (index * 0.1)}>
+                                <div className="h-full p-6 md:p-8 border border-white/10 bg-white/5 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(234,179,8,0.1)] transition-all duration-500 group cursor-default">
+                                    <div className="flex flex-col h-full justify-between gap-6">
+                                        <div>
+                                            <div className="flex justify-between items-start mb-6">
+                                                <span className="text-xs font-medium tracking-widest uppercase text-yellow-500/80">{item.tag}</span>
+                                                <span className="text-[10px] px-2 py-1 bg-white/5 border border-white/10 rounded uppercase tracking-wider text-gray-400">{item.type}</span>
+                                            </div>
+                                            <h3 className="text-xl font-medium text-gray-200 group-hover:text-white transition-colors leading-snug">
+                                                {item.title}
+                                            </h3>
+                                        </div>
+                                        <div className="pt-6 border-t border-white/5">
+                                            <span className="text-sm text-gray-500 flex items-center gap-2">
+                                                <span className="w-1 h-1 rounded-full bg-yellow-500"></span>
+                                                {item.status}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Reveal>
+                        ))}
+                    </div>
+                </section>
+
                 {/* Footer */}
                 <footer className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-start md:items-center text-gray-500 text-sm gap-8">
                     <Reveal delay={0.5}>
