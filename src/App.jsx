@@ -1,5 +1,6 @@
 import React from 'react';
 import { Reveal } from './components/Reveal';
+import { TechMarquee } from './components/TechMarquee';
 import { Magnetic } from './components/Magnetic';
 import { config } from './data';
 import { ArrowUpRight } from 'lucide-react';
@@ -24,7 +25,7 @@ function App() {
             <div className="max-w-screen-xl mx-auto px-6 md:px-12 pt-24 md:pt-40">
 
                 {/* Hero Section */}
-                <header className="mb-32">
+                <header className="mb-20">
                     <h1 className="text-5xl md:text-8xl font-bold tracking-tighter mb-8 leading-[0.95]">
                         <Reveal delay={0.1}>
                             <span className="block text-gray-100">{config.hero.line1}</span>
@@ -72,6 +73,11 @@ function App() {
                         </div>
                     </div>
                 </header>
+            </div>
+
+            <TechMarquee />
+
+            <div className="max-w-screen-xl mx-auto px-6 md:px-12">
 
                 {/* Work Grid */}
                 <section className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-32">
