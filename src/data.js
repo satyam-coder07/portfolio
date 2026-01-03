@@ -2,33 +2,34 @@ export const config = {
     hero: {
         line1: "Satyam Swarnakar.",
         line2: "Engineer. Founder. Student.",
-        subtext: "Building the future of AI & Web3 at Newton School of Technology."
+        subtext: "Undergraduate at Newton School of Technology (NST) & Rishihood University. Pursuing an immersive, industry-integrated degree in CS & AI (Class of 2028)."
     },
     socials: [
         { name: "GitHub", url: "https://github.com/satyamswarnakar" },
         { name: "LinkedIn", url: "https://linkedin.com/in/satyamswarnakar" },
         { name: "Twitter", url: "https://twitter.com/satyamswarnakar" },
-        { name: "Email", url: "mailto:satyam@example.com" }
+        { name: "Email", url: "mailto:satyamswarnakar@example.com" }
     ],
     projects: [
         {
             title: "Nex Guild",
             category: "Community Platform",
+            description: "A professional ecosystem unifying Reddit, LinkedIn, and Discord. Bridging the gap between aspiring devs and industry veterans.",
+            tags: ["React", "Node.js", "Socket.io"],
             link: "#"
         },
         {
-            title: "GPT-2 Analysis",
+            title: "Ride Deck",
+            category: "Mobility Tech",
+            description: "Next-gen mobility architecture focusing on optimized routing algorithms and driver economics.",
+            tags: ["System Design", "Geolocation API"],
+            link: "#"
+        },
+        {
+            title: "GPT-2 Architecture",
             category: "AI Research",
-            link: "#"
-        },
-        {
-            title: "Web3 Protocols",
-            category: "DeFi",
-            link: "#"
-        },
-        {
-            title: "2026 Roadmap",
-            category: "GSoC & Internships",
+            description: "Code-first deconstruction of the GPT-2 whitepaper, implementing attention mechanisms from scratch.",
+            tags: ["Python", "PyTorch", "Mathematics"],
             link: "#"
         }
     ],
@@ -37,12 +38,6 @@ export const config = {
             title: "Bitcoin: A Peer-to-Peer Electronic Cash System",
             tag: "Cryptography / Distributed Systems",
             status: "Analyzed Implementation",
-            type: "Paper"
-        },
-        {
-            title: "Language Models are Unsupervised Multitask Learners (GPT-2)",
-            tag: "NLP / Transformers",
-            status: "Deconstructing Architecture",
             type: "Paper"
         },
         {

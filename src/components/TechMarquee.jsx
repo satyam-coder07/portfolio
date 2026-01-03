@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const skills = [
-    "React", "Node.js", "Python", "Solidity",
-    "Docker", "Tailwind", "Git", "MongoDB", "Next.js"
+    "React", "Python", "Solidity", "Docker",
+    "System Design", "Next.js", "Tailwind"
 ];
 
 export const TechMarquee = () => {

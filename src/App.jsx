@@ -5,6 +5,14 @@ import { Magnetic } from './components/Magnetic';
 import { config } from './data';
 import { ArrowUpRight } from 'lucide-react';
 
+/**
+ * Main Application Component
+ * 
+ * Uses Framer Motion for scroll-based animations (Reveal component) and 
+ * custom Magnetic buttons for cursor interaction.
+ * 
+ * @returns {JSX.Element} The full single-page portfolio
+ */
 function App() {
     return (
         <div className="bg-black min-h-screen text-gray-100 selection:bg-white/20 selection:text-white pb-20 font-sans relative">
@@ -26,7 +34,7 @@ function App() {
 
                 {/* Hero Section */}
                 <header className="mb-20">
-                    <h1 className="text-5xl md:text-8xl font-bold tracking-tighter mb-8 leading-[0.95]">
+                    <h1 className="text-5xl md:text-8xl font-bold tracking-tighter mb-8 leading-[0.95] break-words">
                         <Reveal delay={0.1}>
                             <span className="block text-gray-100">{config.hero.line1}</span>
                         </Reveal>
@@ -89,9 +97,19 @@ function App() {
                                         <span className="text-gray-500 text-sm tracking-widest uppercase font-medium">{project.category}</span>
                                         <ArrowUpRight strokeWidth={1} className="w-6 h-6 text-gray-500 group-hover:text-white transition-colors duration-300" />
                                     </div>
-                                    <h3 className="text-3xl md:text-4xl font-semibold text-gray-200 group-hover:text-white transition-colors">
+                                    <h3 className="text-3xl md:text-4xl font-semibold text-gray-200 group-hover:text-white transition-colors mb-4">
                                         {project.title}
                                     </h3>
+                                    <p className="text-gray-400 leading-relaxed mb-6">
+                                        {project.description}
+                                    </p>
+                                    <div className="flex flex-wrap gap-2">
+                                        {project.tags.map((tag, tIndex) => (
+                                            <span key={tIndex} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-gray-400">
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
                                 </a>
                             </Magnetic>
                         </Reveal>
@@ -136,7 +154,15 @@ function App() {
                 {/* Footer */}
                 <footer className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-start md:items-center text-gray-500 text-sm gap-8">
                     <Reveal delay={0.5}>
-                        <div className="flex flex-col gap-2">
+                        <div className="flex flex-col gap-4">
+                            {/* Terminal Widget */}
+                            <div className="flex items-center gap-3 px-4 py-3 bg-black border border-white/10 rounded-lg max-w-fit">
+                                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                                <span className="text-xs font-mono text-gray-400">
+                                    Current Focus: <span className="text-white">Preparing for Summer of Bitcoin '26</span>
+                                </span>
+                            </div>
+
                             <p>{config.footer}</p>
                             <a
                                 href="mailto:satyamswarnakar@example.com"
