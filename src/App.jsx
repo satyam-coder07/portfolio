@@ -1,9 +1,11 @@
-import React from 'react';
 import { Reveal } from './components/Reveal';
 import { TechMarquee } from './components/TechMarquee';
 import { Magnetic } from './components/Magnetic';
+import { ScrollProgress } from './components/ScrollProgress';
 import { config } from './data';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Copy, Check } from 'lucide-react';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 /**
  * Main Application Component
@@ -14,8 +16,23 @@ import { ArrowUpRight } from 'lucide-react';
  * @returns {JSX.Element} The full single-page portfolio
  */
 function App() {
+    const [emailCopied, setEmailCopied] = useState(false);
+
+    const handleCopyEmail = () => {
+        navigator.clipboard.writeText("work.satyam123@gmail.com");
+        setEmailCopied(true);
+        setTimeout(() => setEmailCopied(false), 2000);
+    };
+
     return (
         <div className="bg-black min-h-screen text-gray-100 selection:bg-white/20 selection:text-white pb-20 font-sans relative">
+            <ScrollProgress />
+
+            {/* Email Toast */}
+            <div className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-medium text-sm transition-all duration-300 flex items-center gap-2 ${emailCopied ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}>
+                <Check className="w-4 h-4 text-green-400" />
+                <span>Email Copied to Clipboard</span>
+            </div>
 
             {/* Availability Badge */}
             <div className="absolute top-6 right-6 md:top-12 md:right-12 z-20">
@@ -49,16 +66,23 @@ function App() {
                                 <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed mb-8">
                                     {config.hero.subtext}
                                 </p>
-                                <Magnetic>
-                                    <a
-                                        href="/resume.pdf"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-medium text-sm hover:bg-gray-200 transition-colors"
-                                    >
-                                        View Resume
-                                    </a>
-                                </Magnetic>
+                                <div className="mt-8">
+                                    <Magnetic>
+                                        <motion.a
+                                            href="/resume.pdf"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            whileHover={{ scale: 1.02 }}
+                                            whileTap={{ scale: 0.98 }}
+                                            className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-white/20 hover:bg-white hover:text-black hover:border-white transition-colors duration-300 group"
+                                        >
+                                            <span className="text-xs font-medium uppercase tracking-widest text-white group-hover:text-black transition-colors">
+                                                View Resume
+                                            </span>
+                                            <ArrowUpRight className="w-3 h-3 text-white group-hover:text-black transition-colors" />
+                                        </motion.a>
+                                    </Magnetic>
+                                </div>
                             </Reveal>
                         </div>
 
@@ -156,20 +180,36 @@ function App() {
                     <Reveal delay={0.5}>
                         <div className="flex flex-col gap-4">
                             {/* Terminal Widget */}
-                            <div className="flex items-center gap-3 px-4 py-3 bg-black border border-white/10 rounded-lg max-w-fit">
-                                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                                <span className="text-xs font-mono text-gray-400">
-                                    Current Focus: <span className="text-white">Preparing for Summer of Bitcoin '26</span>
-                                </span>
+                            {/* Execution Monitor */}
+                            <div className="w-full max-w-md mb-4 bg-black border border-white/10 rounded-lg overflow-hidden">
+                                <div className="px-4 py-2 border-b border-white/10 bg-white/5 flex items-center justify-between">
+                                    <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest">System Diagnostics</span>
+                                    <span className="text-[10px] font-bold text-yellow-500 uppercase tracking-wider animate-pulse">Mission Status: 2026</span>
+                                </div>
+                                <div className="p-4 flex flex-col gap-4">
+                                    {config.executionMonitor.map((item, index) => (
+                                        <div key={index} className="flex flex-col gap-1">
+                                            <div className="flex items-center gap-2">
+                                                <div className={`w-1.5 h-1.5 rounded-full ${item.color} animate-pulse shadow-[0_0_8px_currentColor]`} />
+                                                <span className="text-xs font-semibold text-gray-200 tracking-wide">{item.title}</span>
+                                            </div>
+                                            <div className="pl-3.5 border-l border-white/10 ml-[3px]">
+                                                <p className="text-[10px] text-gray-400 font-mono mb-0.5">TARGET: <span className="text-gray-300">{item.target}</span></p>
+                                                <p className="text-[10px] text-gray-500 font-mono">STATUS: <span className={item.color.replace('bg-', 'text-')}>{item.status}</span></p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
 
                             <p>{config.footer}</p>
-                            <a
-                                href="mailto:satyamswarnakar@example.com"
-                                className="text-gray-300 hover:text-white transition-colors font-medium"
+                            <button
+                                onClick={handleCopyEmail}
+                                className="text-gray-300 hover:text-white transition-colors font-medium flex items-center gap-2 group text-left"
                             >
-                                satyamswarnakar@example.com
-                            </a>
+                                <span className="group-hover:underline decoration-white/30 underline-offset-4">work.satyam123@gmail.com</span>
+                                <Copy className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                            </button>
                         </div>
                     </Reveal>
                     <Reveal delay={0.6}>

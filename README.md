@@ -1,16 +1,55 @@
-# React + Vite
+# Satyam Swarnakar | Full Stack Engineer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white)
 
-Currently, two official plugins are available:
+Personal portfolio v1.0 built with **React 19** and **Tailwind CSS**. Featuring a minimalist design, custom magnetic interactions, and high-performance physics-based animations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- ⚡️ **Vite + React** for sub-second load times and instant HMR.
+- 🎨 **Tailwind CSS v4** for a precision 'Clean Luxury' user interface.
+- 🎭 **Framer Motion** for physics-based enter animations and gesture interactions.
+- 📱 **Fully Responsive** mobile-first layout with adapted typography.
+- 🧩 **Component Architecture** featuring reusable `Reveal` and `Magnetic` wrappers.
+- 📊 **Mission Status Board** tracking 2026 engineering goals.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend:** React, Vite
+- **Styling:** Tailwind CSS, PostCSS
+- **Animation:** Framer Motion
+- **Icons:** Lucide React
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Local Development
+
+To run this project locally:
+
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/satyam-coder07/portfolio.git
+    cd portfolio
+    ```
+
+2.  **Install Dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Start Dev Server**
+    ```bash
+    npm run dev
+    ```
+
+4.  **Build for Production**
+    ```bash
+    npm run build
+    ```
+
+## Author
+
+**Satyam Swarnakar**  
+Undergraduate at [Newton School of Technology](https://www.newtonschool.co/) & Rishihood University.  
+*Building the future of AI & Web3.*
