@@ -1,8 +1,9 @@
 export const config = {
     hero: {
-        line1: "Satyam Swarnakar.",
-        line2: "Engineer. Founder. Student.",
-        subtext: "Undergraduate at Newton School of Technology (NST) & Rishihood University. Pursuing an immersive, industry-integrated degree in CS & AI (Class of 2028)."
+        line1: "SATYAM SWARNAKAR",
+        line2: "Systems Engineer & Open Source Contributor • Targeting Bitcoin Core.",
+        subtext: "Undergraduate at Newton School of Technology. Deconstructing the Bitcoin protocol in Python and building visualization tools for Cloud Native (LFX) ecosystems.",
+        statusBadge: "Contributing to: Bitcoin & LFX Mentorship"
     },
     socials: [
         { name: "GitHub", url: "https://github.com/satyamswarnakar" },
@@ -10,39 +11,42 @@ export const config = {
         { name: "Twitter", url: "https://twitter.com/satyamswarnakar" },
         { name: "Email", url: "mailto:work.satyam123@gmail.com" }
     ],
+    marquee: [
+        "Bitcoin Core", "Cryptography", "Python", "Systems Design", "Kubernetes", "React", "Open Source"
+    ],
     projects: [
         {
-            title: "Nex Guild",
-            category: "Community Platform",
-            description: "A professional ecosystem unifying Reddit, LinkedIn, and Discord. Bridging the gap between aspiring devs and industry veterans.",
-            tags: ["React", "Node.js", "Socket.io"],
-            link: "#"
+            title: "Bitcoin Blockcraft",
+            category: "Blockchain Protocol",
+            description: "A Python-based implementation of Bitcoin's core cryptographic primitives. Simulates block mining, transaction hashing, and P2P node communication.",
+            tags: ["Python", "SHA-256", "Cryptography", "P2P Networking"],
+            link: "https://github.com/satyam-coder07/bitcoin-blockcraft"
         },
         {
-            title: "Ride Deck",
-            category: "Mobility Tech",
-            description: "Next-gen mobility architecture focusing on optimized routing algorithms and driver economics.",
-            tags: ["System Design", "Geolocation API"],
-            link: "#"
+            title: "Krkn Insight (LFX Mentorship)",
+            category: "Cloud Native / Chaos Engineering",
+            description: "Developed for the LFX Mentorship program. An automated Root Cause Analysis (RCA) and visualization layer for Kubernetes chaos experiments.",
+            tags: ["Python", "Pandas", "Plotly", "Chaos Engineering"],
+            link: "https://github.com/satyam-coder07/krkn-insight-dashboard-prototype"
         },
         {
-            title: "GPT-2 Architecture",
-            category: "AI Research",
-            description: "Code-first deconstruction of the GPT-2 whitepaper, implementing attention mechanisms from scratch.",
-            tags: ["Python", "PyTorch", "Mathematics"],
-            link: "#"
+            title: "Stock Market AI Analyser",
+            category: "AI in FinTech",
+            description: "An autonomous agent system using Phidata and Groq to analyze real-time financial data and generate investment insights.",
+            tags: ["AI Agents", "Groq", "Phidata", "Financial Modeling"],
+            link: "https://github.com/satyam-coder07/stock_market_analyser"
         }
     ],
     deepDives: [
         {
-            title: "Bitcoin: A Peer-to-Peer Electronic Cash System",
-            tag: "Cryptography / Distributed Systems",
-            status: "Analyzed Implementation",
+            title: "Bitcoin Whitepaper",
+            tag: "Protocol Analysis",
+            status: "Implementing Primitives",
             type: "Paper"
         },
         {
-            title: "Designing Data-Intensive Applications",
-            tag: "System Design",
+            title: "Mastering Bitcoin (Antonopoulos)",
+            tag: "Technical Reference",
             status: "Current Read",
             type: "Book"
         }

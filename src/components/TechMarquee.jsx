@@ -1,10 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
-const skills = [
-    "React", "Python", "Solidity", "Docker",
-    "System Design", "Next.js", "Tailwind"
-];
+import { config } from '../data';
 
 export const TechMarquee = () => {
     return (
@@ -24,7 +20,7 @@ export const TechMarquee = () => {
                         duration: 50
                     }}
                 >
-                    {skills.map((skill, index) => (
+                    {config.marquee.map((skill, index) => (
                         <span
                             key={index}
                             className="text-[5rem] md:text-[7rem] font-bold text-slate-800 hover:text-white transition-colors duration-500 px-12 md:px-16 uppercase tracking-tighter cursor-default"
@@ -43,7 +39,7 @@ export const TechMarquee = () => {
                         duration: 50
                     }}
                 >
-                    {skills.map((skill, index) => (
+                    {config.marquee.map((skill, index) => (
                         <span
                             key={index}
                             className="text-[5rem] md:text-[7rem] font-bold text-slate-800 hover:text-white transition-colors duration-500 px-12 md:px-16 uppercase tracking-tighter cursor-default"
